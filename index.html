@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://www.powertofly.com/how-we-work -->
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<!-- jQuery library (served from Google) -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+	rel="stylesheet">
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300'
+	rel='stylesheet' type='text/css'>
+
+<!--Call Javascript file for Email Validation-->
+<script src="email/validation.js"></script>
+
+
+
+<!-- Importing Font "Shadows Into Light"-->
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light'
+	rel='stylesheet' type='text/css'>
+<!-- Importing Font "Oswald"-->
+
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300'
+	rel='stylesheet' type='text/css'>
+<!--Many Mentors Title-->
+<title>Many Mentors - Inspire. Encourage. Support</title>
+<!-- CSS files-->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.icon-large.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/nav.css">
+<!-- css for new navigation bar-->
+
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/style.css" />
+ 
+ 
+
+<!-- End Bootstrap -->
+</head>
+<body>
+
+<div id="fb-root"></div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script
+			src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="assets/bootstrap.min.js"></script>
+<script src="js/classie.js"></script>
+<script>
+    function init() {
+        window.addEventListener('scroll', function(e){
+            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                shrinkOn = 300,
+                header = document.querySelector("header");
+            if (distanceY > shrinkOn) {
+                classie.add(header,"smaller");
+            } else {
+                if (classie.has(header,"smaller")) {
+                    classie.remove(header,"smaller");
+                }
+            }
+        });
+    }
+    window.onload = init();
+
+		$('#myCarousel').on('slide.bs.carousel', function (e) {
+  if (e.type == "slide" && e.direction == "right" && e.relatedTarget.className != "item"){
+    return e.preventDefault();
+  }
+})
+			$(document).ready(function() {
+				$("input#submit").click(function() {
+					$.ajax({
+						type : "POST",
+						url : "process.php", // 
+						data : $('form.contact').serialize(),
+						success : function(msg) {
+							$("#thanks").html(msg)
+							$("#form-content").modal('hide');
+						},
+						error : function() {
+							alert("failure");
+						}
+					});
+				});
+			});
+		
+
+
+		
+			$(function() {
+				var curPage = "";
+				$("#menu a").click(function(event) {
+					event.preventDefault();
+					if (curPage.length) {
+						$("#" + curPage).hide();
+					}
+					curPage = $(this).data("page");
+					$("#" + curPage).show();
+				});
+			});
+
+			$(function() {
+				$('a[href*=#]:not([href=#])')
+						.click(
+								function() {
+									if (location.pathname.replace(/^\//, '') == this.pathname
+											.replace(/^\//, '')
+											&& location.hostname == this.hostname) {
+										var target = $(this.hash);
+										target = target.length ? target
+												: $('[name='
+														+ this.hash.slice(1)
+														+ ']');
+										if (target.length) {
+											$('html,body').animate({
+												scrollTop : target.offset().top
+											}, 1000);
+											return false;
+										}
+									}
+								});
+			});
+
+
+		
+		
+		
+		</script>
+
+<!--End Java Script-->
+
+<article class="article" id="top"></article>
+
+<header>
+    <div class="container clearfix">
+        <h1 id="logo">
+        <img src="img/logo.png">
+        </h1>
+       
+        <nav>
+        
+        <a href="#about">About</a>
+        <a href="#ourImpact">Our Impact</a>
+        <a href="#getInvolved">Get Involved</a>
+        <a href="">Connect</a>
+       				<a href="#" button type="button" class="btn btn-danger">Apply
+						Now </a>
+					</button>
+		
+        </nav>
+        
+    </div>
+</header><!-- /header -->
+
+
+	<!-- Logo-->
+	<div id="icons"
+		style="background-image: url(header_bg.jpg); height: 100px">
+		<img src="./index_files/logo.png" width="120" height="80" hspace="100"
+			align="left">
+	</div>
+	
+<article class="article" id="home">
+<div id="mmwCarousel" class="carousel slide" data-ride="carousel">
+
+
+  <!-- Wrapper for slides -->
+
+
+  <div class="carousel-inner">
+  
+  
+	<div class="item active">
+      <img src="photoGallery/pic1.jpg" height="100%" width="100%">
+     
+      <!--Caption-->
+      <div class="carousel-caption">
+		<button type="button" class="btn btn-primary" data-target="#mmwCarousel" data-slide-to="1">		
+		<font size="4px">Learn More</font>
+		</button>							 
+      </div>
+      <!-- End Caption-->
+
+    </div>
+    
+    <div class="item">
+ 		<img src="photoGallery/pic2.jpg" height="100%" width="100%">
+           <div class="carousel-caption">
+      	  <p>Slide 2</p>      
+           </div>
+     
+    </div>
+    <div class="item">
+       <img src="photoGallery/pic3.jpg" height="100%" width="100%">
+     
+      <div class="carousel-caption">
+      
+      <p>Slide 3</p>
+      
+      </div>	  
+	   </div>
+    <div class="item">
+       <img src="photoGallery/pic4.jpg" height="100%" width="100%">  
+      <div class="carousel-caption">
+      
+      <p>Slide 4</p>
+      
+      </div>	  
+	   </div>
+	   
+  </div>
+	     <!-- Indicators (small circles)-->
+  <ol class="carousel-indicators">
+    <li data-target="#mmwCarousel" data-slide-to="0" ></li>
+    <li data-target="#mmwCarousel" data-slide-to="1"></li>
+    <li data-target="#mmwCarousel" data-slide-to="2"></li>
+    <li data-target="#mmwCarousel" data-slide-to="3"></li>
+
+  </ol> 
+</div>
+
+
+			<!--White Box -->
+			
+			<div class="whiteBox">
+			
+				<hr class="grayLine">
+				<p class="os14" align="center">
+				Through the power of peer
+					mentoring, ManyMentors will inspire, encourage and support minority
+					and female students to gain interest in, pursue, and attain degrees
+					in Science, Technology, Engineering and Math (STEM)!</p>
+				<hr class="grayLine">
+				
+			</div>
+	</article>
+
+
+	<article class="aboutArticle" id="about">
+		<img src="index_files/about.png" width="100%">
+
+		<div id="leftRightMargin">
+
+			<p class="titleFont" align="center"><font class="line">----------</font> About <font class="line">----------</font></p>
+
+
+
+			<div class="row text-center">
+				<div class="col-md-4">
+				<br>
+				<img src="images/ourTeam_icon.gif" width="200px" height="200px">
+				<br>	
+				<br>				
+					<button type="button" class="btn btn-primary">
+						<font size="4px">
+						
+					
+						 Our Team</font>
+					</button>
+				</div>
+
+				<div class="col-md-4">
+					<br>	
+					<img src="images/ourPartners_icon.gif"  width="200px" height="200px">
+					<br>
+					<br>
+			
+					<button type="button" class="btn btn-primary">
+						<font size="4px"> Our Partners</font>
+					</button>
+				</div>
+
+				<div class="col-md-4">
+					<br>
+					<img src="images/ourPartners_icon.gif"  width="200px" height="200px">
+					<br>
+					<br>
+					
+					<button type="button" class="btn btn-primary">
+						<font size="4px"> 
+						Our Supporters</font>
+					</button>
+				</div>
+			</div>
+
+
+			<div class="row">
+
+
+				<div class="col-md-12">
+
+					<p class="os14">
+						<br> <br> <font class="blueBold"> ManyMentors</font> is
+						a 501(c)(3) nonprofit founded in 2011 to inspire, encourage, and
+						support underrepresented students’ interest in pursuing science,
+						technology, engineering, and math (STEM) fields, and eventual
+						entrance into the STEM workforce. From middle schoolers to young
+						working professionals, we connect individuals to near-age mentors
+						who can make opportunities in STEM become more visible, valuable &
+						viable. <br> <br>
+					</p>
+
+				</div>
+			</div>
+
+			<div class="row text-center">
+				<div class="col-md-12">
+				<img src="images/whyStem_icon.gif" width="200px" height="200px">
+				<br>	
+				<br>				
+
+
+
+					<button type="button" class="btn btn-primary">
+						<font size="4px"> Why STEM? </font>
+					</button>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-md-12">
+
+
+					<p class="os14">
+						<br> Our approach is a combination of<font color="#3c76ff">
+							onsite </font> and <font color="#3c76ff">online</font> mentoring to
+						coordinate STEM volunteer outreach and facilitate one-on-one
+						mentor/mentee matching & communication so students can gain access
+						to resources, discover local opportunities, & develop professional
+						skills in the STEM fields. <br>
+						<br>ManyMentors primarily serves middle and high school
+						students in Connecticut, and is currently expanding to other areas
+						in the Northeast. We have student chapters at the University of
+						Connecticut, Cornell University, Yale University, and more! Check
+						out our<font color="#3c76ff"> Mentor Map</font> for more details!
+					</p>
+				</div>
+			</div>
+
+				
+		<a href="#top"><font color="black"><p align="right">to
+						the top</p></font></a>
+		</div>
+
+
+	</article>
+
+
+	<article class="article" id="tutor">
+	<div class="imageAndText">
+    <img src="index_files/tutoring.png" height="100%" width="100%" class="align-center img-responsive">	
+		
+
+
+	<div class="row">
+    	<div class="col-xs-6 col-md-6">
+    	   <p align="center">
+ 
+    <img src="index_files/onsite_tutoring_icon.png" height="30%" width="30%" class="align-center img-responsive"> 
+ </p>
+    <br>
+    <p align="center">
+    <font class="whiteFont">
+    in-person mentoring
+    </font>
+	</p>
+    </li>		
+    	</div>
+    	<div class="col-xs-6 col-md-6">
+    	   <p align="center">
+ 
+    		<img src="index_files/online_tutoring_icon.png" height="30%" width="30%" class="align-center img-responsive"> </li>
+		</p>
+			<br>
+			    <p align="center">
+			    <font class="whiteFont">
+			    online mentoring</font></p>
+		</div>
+	</div>
+	</div>
+	</article>
+			
+		<!--White Box -->
+		<div class="whiteBox">
+		<hr class="grayLine">
+
+			<p class="os14" align="center">"ManyMentors helps me be a role
+				model to the youth in my community"</p>
+			<br>
+			<p class="os10" align="center">-Julian Rose, Biomedical
+				Engineering, UConn</p>
+				
+		<hr class="grayLine">
+		</div>
+		<!-- End White Box -->
+	
+
+	<!--Our Impact-->
+
+	<article class="aboutArticle" id="ourImpact">
+		<div id="leftRightMargin">
+			<p class="titleFont" align="center">
+			<font class="line">----------</font> Our Impact <font class="line">----------</font></p>
+			
+			<div class="row">
+				<div class="col-md-12">	
+					<p class="os14">
+						<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+							Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+							natoque penatibus et magnis dis parturient montes</li>
+						<br>
+						<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+							Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+							natoque penatibus et magnis dis parturient montes</li>
+						<br>
+						<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+							Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+							natoque penatibus et magnis dis parturient montes</li>
+						<br>
+						<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+							Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+							natoque penatibus et magnis dis parturient montes</li>
+					</p>
+				</div>
+			</div>
+		</div>
+		<a href="#top"><font color="black"><p align="right">to
+						the top</p></font></a>
+	</article>
+	<!--end of the page-->
+
+
+	<article class="whiteArticle" id="getInvolved">	
+		<img src="index_files/getInvolved.png" width="100%">
+
+	<p class="titleFont" align="center"><font class="line">----------</font> Get Involved <font class="line">----------</font></p>
+
+	<div class="whiteBackground">
+	<img src="img/steps.png"class="img-responsive center-block" /><br><br>
+  		
+	</div>
+
+
+
+<!--red color Navigation-->
+
+<div class="navbar navbar-default" role="navigation">
+				<div class="navbar-header-default">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#middleMenuBar">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="whatsup">
+					<ul class="nav navbar-nav" id="menu">
+						<li><a href="#" data-page="page1">On My Campus</a></li>
+						<li><a href="#" data-page="page2">I represent an
+								organization</a></li>
+						<li><a href="#" data-page="page3">I am a parent</a></li>
+						<li><a href="#" data-page="page4">I want to mentor</a></li>
+						<li><a href="#" data-page="page5">I want to be mentored</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+</div>
+
+
+		<div id="page1" class="content">
+			<p class="titleFont" align="center">On My Campus</p>
+			<div class="whiteBox">
+				<p class="os14" align="center">Through the power of peer
+					mentoring, ManyMentors will inspire, encourage and support minority
+					and female students to gain interest in, pursue, and attain degrees
+					in Science, Technology, Engineering and Math (STEM)!</p>
+			</div>
+		</div>
+
+		<div id="page2" class="content">
+			<p class="titleFont" align="center">I represent an organization</p>
+			<div class="whiteBox">
+				<p class="os14" align="center">Through the power of peer
+					mentoring, ManyMentors will inspire, encourage and support minority
+					and female students to gain interest in, pursue, and attain degrees
+					in Science, Technology, Engineering and Math (STEM)!</p>
+			</div>
+		</div>
+
+		<div id="page3" class="content">
+			<p class="titleFont" align="center">I am a parent</p>
+			<div class="whiteBox">
+				<p class="os14" align="center">Through the power of peer
+					mentoring, ManyMentors will inspire, encourage and support minority
+					and female students to gain interest in, pursue, and attain degrees
+					in Science, Technology, Engineering and Math (STEM)!</p>
+			</div>
+		</div>
+
+		<div id="page4" class="content">
+			<p class="titleFont" align="center">I want to mentor</p>
+			<div class="whiteBox">
+				<p class="os14" align="center">Through the power of peer
+					mentoring, ManyMentors will inspire, encourage and support minority
+					and female students to gain interest in, pursue, and attain degrees
+					in Science, Technology, Engineering and Math (STEM)!</p>
+			</div>
+		</div>
+
+		<div id="page5" class="content">
+			<p class="titleFont" align="center">I want to be mentored</p>
+			<div class="whiteBox">
+				<p class="os14" align="center">Through the power of peer
+					mentoring, ManyMentors will inspire, encourage and support minority
+					and female students to gain interest in, pursue, and attain degrees
+					in Science, Technology, Engineering and Math (STEM)!</p>
+			</div>
+		</div>
+
+
+
+
+
+				<a href="#top"><font color="black"><p align="right">to
+						the top</p></font></a>
+
+	</article>
+
+
+
+
+	<article class="article" id="news">
+		<img src="index_files/newsBanner.png" width="100%">
+	
+
+			<p class="titleFont" align="center"><font class="line">----------</font> Connect <font class="line">----------</font></p>
+			<p class="text-center">
+			“Like” us on Facebook and Follow us on Twitter!
+			</p>
+
+<div class="fb-like-box" data-href="https://www.facebook.com/manymentors" data-width="300" data-height="600" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+
+<br>
+<a class="twitter-timeline" href="https://twitter.com/ManyMentors_org" data-widget-id="410401076479680513">Tweets by @ManyMentors_org</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+		<a class="twitter-timeline" href="https://twitter.com/ManyMentors_org">
+		</a> 
+					<a href="#top"><font color="black"><p align="right">to
+						the top</p></font></a>
+
+
+
+
+	</article>
+
+
+
+	<footer>
+		<div class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#footerMenu">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"> 
+					<font color="white">
+							Copyright© ManyMentors 2014
+					</font>
+					</a>
+				</div>
+				<div class="navbar-collapse collapse" id="footerMenu">
+
+				<ul class="nav navbar-nav">
+
+						<li>
+							<!-- Button trigger modal -->
+
+							<button class="btn btn-link" data-toggle="modal"
+								data-target="#termsOfServices">
+								<font class="blueBold"> <font size="3px"> Terms of
+										Services </font>
+								</font>
+							</button> <!-- Modal -->
+							<div class="modal fade" id="termsOfServices" tabindex="-1"
+								role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+
+											<button type="button" class="close" data-dismiss="modal">
+												<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+											</button>
+											<h4 class="modal-title" id="myModalLabel">Many Mentors -
+												Terms and Services</h4>
+										</div>
+										<div class="modal-body">
+
+											<h2>Web Site Terms and Conditions of Use</h2>
+
+											<h3>1. Terms</h3>
+
+											<p>By accessing this web site, you are agreeing to be
+												bound by these web site Terms and Conditions of Use, all
+												applicable laws and regulations, and agree that you are
+												responsible for compliance with any applicable local laws.
+												If you do not agree with any of these terms, you are
+												prohibited from using or accessing this site. The materials
+												contained in this web site are protected by applicable
+												copyright and trade mark law.</p>
+
+											<h3>2. Use License</h3>
+
+											<ol type="a">
+												<li>Permission is granted to temporarily download one
+													copy of the materials (information or software) on Many
+													Mentors's web site for personal, non-commercial transitory
+													viewing only. This is the grant of a license, not a
+													transfer of title, and under this license you may not:
+
+													<ol type="i">
+														<li>modify or copy the materials;</li>
+														<li>use the materials for any commercial purpose, or
+															for any public display (commercial or non-commercial);</li>
+														<li>attempt to decompile or reverse engineer any
+															software contained on Many Mentors's web site;</li>
+														<li>remove any copyright or other proprietary
+															notations from the materials; or</li>
+														<li>transfer the materials to another person or
+															"mirror" the materials on any other server.</li>
+													</ol>
+												</li>
+												<li>This license shall automatically terminate if you
+													violate any of these restrictions and may be terminated by
+													Many Mentors at any time. Upon terminating your viewing of
+													these materials or upon the termination of this license,
+													you must destroy any downloaded materials in your
+													possession whether in electronic or printed format.</li>
+											</ol>
+
+											<h3>3. Disclaimer</h3>
+
+											<ol type="a">
+												<li>The materials on Many Mentors's web site are
+													provided "as is". Many Mentors makes no warranties,
+													expressed or implied, and hereby disclaims and negates all
+													other warranties, including without limitation, implied
+													warranties or conditions of merchantability, fitness for a
+													particular purpose, or non-infringement of intellectual
+													property or other violation of rights. Further, Many
+													Mentors does not warrant or make any representations
+													concerning the accuracy, likely results, or reliability of
+													the use of the materials on its Internet web site or
+													otherwise relating to such materials or on any sites linked
+													to this site.</li>
+											</ol>
+
+											<h3>4. Limitations</h3>
+
+											<p>In no event shall Many Mentors or its suppliers be
+												liable for any damages (including, without limitation,
+												damages for loss of data or profit, or due to business
+												interruption,) arising out of the use or inability to use
+												the materials on Many Mentors's Internet site, even if Many
+												Mentors or a Many Mentors authorized representative has been
+												notified orally or in writing of the possibility of such
+												damage. Because some jurisdictions do not allow limitations
+												on implied warranties, or limitations of liability for
+												consequential or incidental damages, these limitations may
+												not apply to you.</p>
+
+											<h3>5. Revisions and Errata</h3>
+
+											<p>The materials appearing on Many Mentors's web site
+												could include technical, typographical, or photographic
+												errors. Many Mentors does not warrant that any of the
+												materials on its web site are accurate, complete, or
+												current. Many Mentors may make changes to the materials
+												contained on its web site at any time without notice. Many
+												Mentors does not, however, make any commitment to update the
+												materials.</p>
+
+											<h3>6. Links</h3>
+
+											<p>Many Mentors has not reviewed all of the sites linked
+												to its Internet web site and is not responsible for the
+												contents of any such linked site. The inclusion of any link
+												does not imply endorsement by Many Mentors of the site. Use
+												of any such linked web site is at the user's own risk.</p>
+
+											<h3>7. Site Terms of Use Modifications</h3>
+
+											<p>Many Mentors may revise these terms of use for its web
+												site at any time without notice. By using this web site you
+												are agreeing to be bound by the then current version of
+												these Terms and Conditions of Use.</p>
+
+											<h3>8. Governing Law</h3>
+
+											<p>Any claim relating to Many Mentors's web site shall be
+												governed by the laws of the State of Connecticut without
+												regard to its conflict of law provisions.</p>
+
+											<p>General Terms and Conditions applicable to Use of a
+												Web Site.</p>
+
+
+
+											<h2>Privacy Policy</h2>
+
+											<p>Your privacy is very important to us. Accordingly, we
+												have developed this Policy in order for you to understand
+												how we collect, use, communicate and disclose and make use
+												of personal information. The following outlines our privacy
+												policy.</p>
+
+											<ul>
+												<li>Before or at the time of collecting personal
+													information, we will identify the purposes for which
+													information is being collected.</li>
+												<li>We will collect and use of personal information
+													solely with the objective of fulfilling those purposes
+													specified by us and for other compatible purposes, unless
+													we obtain the consent of the individual concerned or as
+													required by law.</li>
+												<li>We will only retain personal information as long as
+													necessary for the fulfillment of those purposes.</li>
+												<li>We will collect personal information by lawful and
+													fair means and, where appropriate, with the knowledge or
+													consent of the individual concerned.</li>
+												<li>Personal data should be relevant to the purposes
+													for which it is to be used, and, to the extent necessary
+													for those purposes, should be accurate, complete, and
+													up-to-date.</li>
+												<li>We will protect personal information by reasonable
+													security safeguards against loss or theft, as well as
+													unauthorized access, disclosure, copying, use or
+													modification.</li>
+												<li>We will make readily available to customers
+													information about our policies and practices relating to
+													the management of personal information.</li>
+											</ul>
+
+											<p>We are committed to conducting our business in
+												accordance with these principles in order to ensure that the
+												confidentiality of personal information is protected and
+												maintained.</p>
+
+
+										</div>
+
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default"
+												data-dismiss="modal">Close</button>
+									<li>
+
+
+							<button class="btn btn-link" data-toggle="modal"
+								data-target="#contactUs">
+								<font class="whiteBold"> <font size="3px"> Questions? </font>
+								</font>
+							</button> <!-- Modal -->
+							<div class="modal fade" id="contactUs" tabindex="-1"
+								role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">
+												<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+											</button>
+											<h4 class="modal-title" id="myModalLabel">Many Mentors -
+												Terms and Services</h4>
+										</div>
+										<div class="modal-body">
+
+											<div class="row">
+												<div class="col-md-6">
+
+													<address>
+														<strong>Many Mentors</strong><br> 1077 Silas Deane
+														Highway, PMB 200<br> Wethersfield, CT 06109<br>
+														<!--
+  <abbr title="Phone">P:</abbr> (123) 456-7890-->
+													</address>
+												</div>
+												<div class="col-md-6">
+
+													<div id="contact-area">
+
+														<form method="post" action="contactengine.php">
+															<label for="Name">Name:</label> <input type="text"
+																name="Name" id="Name"> <label for="City">City:</label>
+															<input type="text" name="City" id="City"> <label
+																for="Email">Email:</label> <input type="text"
+																name="Email" id="Email"> <label for="Message">Message:</label><br>
+															<textarea name="Message" rows="20" cols="20" id="Message"></textarea>
+
+															<input type="submit" name="submit" value="Submit"
+																class="submit-button">
+														</form>
+
+														<div style="clear: both;"></div>
+
+														<p>
+															Check out a <a
+																href="http://css-tricks.com/examples/NiceSimpleContactForm2">version
+																of this</a> with SPAM protection.
+														</p>
+
+													</div>
+
+
+												</div>
+											</div>
+
+										</div>
+
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default"
+												data-dismiss="modal">Close</button>
+											<!--
+        <button type="button" class="btn btn-primary">Save changes</button>-->
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li> <!--Questions ?-->
+						<li>
+
+							<button class="btn btn-link" data-toggle="modal"
+								data-target="#contactUs">
+								<font class="blueBold"> <font size="3px"> Contact
+										Us </font>
+								</font>
+							</button> <!-- Modal -->
+							<div class="modal fade" id="contactUs" tabindex="-1"
+								role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">
+												<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+											</button>
+											<h4 class="modal-title" id="myModalLabel">Many Mentors -
+												Terms and Services</h4>
+										</div>
+										<div class="modal-body">
+
+											<div class="row">
+												<div class="col-md-6">
+
+													<address>
+														<strong>Many Mentors</strong><br> 1077 Silas Deane
+														Highway, PMB 200<br> Wethersfield, CT 06109<br>
+														<!--
+  <abbr title="Phone">P:</abbr> (123) 456-7890-->
+													</address>
+												</div>
+												<div class="col-md-6">
+
+													<div id="contact-area">
+
+														<form method="post" action="contactengine.php">
+															<label for="Name">Name:</label> <input type="text"
+																name="Name" id="Name"> <label for="City">City:</label>
+															<input type="text" name="City" id="City"> <label
+																for="Email">Email:</label> <input type="text"
+																name="Email" id="Email"> <label for="Message">Message:</label><br>
+															<textarea name="Message" rows="20" cols="20" id="Message"></textarea>
+
+															<input type="submit" name="submit" value="Submit"
+																class="submit-button">
+														</form>
+
+														<div style="clear: both;"></div>
+
+														<p>
+															Check out a <a
+																href="http://css-tricks.com/examples/NiceSimpleContactForm2">version
+																of this</a> with SPAM protection.
+														</p>
+
+													</div>
+
+
+												</div>
+											</div>
+
+										</div>
+
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default"
+												data-dismiss="modal">Close</button>
+											<!--
+        <button type="button" class="btn btn-primary">Save changes</button>-->
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li> <!--Contact Us-->
+				</ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<span class="icon"> 
+					<a
+						href="https://www.facebook.com/manymentors" target="_blank"> <img
+							src="./social_media_icons/facebook_icon.png" width="30"
+							height="30" class="iconMargin">
+					</a> <a href="http://instagram.com/manymentors" target="_blank"> <img
+							src="./social_media_icons/instagram_icon.png" width="30"
+							height="30" class="iconMargin">
+					</a> <a href="https://twitter.com/ManyMentors_org" target="_blank">
+							<img src="./social_media_icons/twitter_icon.png" width="30"
+							height="30" class="iconMargin">
+					</a>
+					</span>
+				</ul> <!-- SNS Icons -->
+				</div>
+
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+		</div>
+	</footer>
+</body>
+</html>
