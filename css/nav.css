@@ -14,12 +14,317 @@ Table of Contents
 
 /* End Blue circle for each step */
 
+
+font.largeNumber {
+font-family: Impact, Charcoal, sans-serif;
+font-size: 70px;
+}
+
+
+p.text-center.largeFont {
+font-size: 30px;
+font-weight: 600;
+color: white;
+}
+
+font.boldOS {
+font-size: 25px;
+font-weight: 500;
+}
+
+.ribbon {
+    background: #eee;
+    border-left: 1px dashed #aaa;
+    border-right: 1px dashed #aaa;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 5px 0 0 #eee,
+                -5px 0 0 #eee;
+    height: 120px;
+    margin: 0 5px;
+    position: relative;
+    width: 90px;
+    -webkit-filter: drop-shadow(0 2px 5px hsla(0,0%,0%,.5));
+}
+.ribbon:after,
+.ribbon:before {
+    border-top: 15px solid #eee;
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 100%;
+    width: 0;
+}
+.ribbon:after {
+    border-left: 50px solid transparent;
+    right: -6px;
+}
+.ribbon:before {
+    border-right: 50px solid transparent;
+    left: -6px;
+}
+
+#flag {
+  width: 110px;
+  height: 56px;
+  padding-top: 15px;
+  position: relative; 
+  background: red;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+#flag:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 13px solid #eee;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+}
+
+		
+			.content-box {
+				width: 410px;
+				height: 235px;
+				margin: 0 auto;
+				position: relative; /* So we can position the banner within the box */
+				background: gray;
+				border: 5px solid white;
+				box-shadow: 0 0 10px rgba(0,0,0,.3);
+				-moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+				-webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+			}
+			
+			#ribbon-container {
+				position: absolute;
+				top: 15px;
+				right: -20px;
+				overflow: visible; /* so we can see the pseudo-elements we're going to add to the anchor */
+				font-size: 18px; /* font-size and line-height must be equal so we can account for the height of the banner */
+				line-height: 18px;
+			}
+			
+			#ribbon-container:before {
+				content:"";
+				height: 0;
+				width: 0;
+				display: block;
+				position: absolute;
+				top: 3px;
+				left: 0;
+				border-top: 29px solid rgba(0,0,0,.3); /* These 4 border properties create the first part of our drop-shadow */
+				border-bottom: 29px solid rgba(0,0,0,.3); 
+				border-right: 29px solid rgba(0,0,0,.3);
+				border-left: 29px solid transparent;
+			}
+			
+			#ribbon-container:after { /* This adds the second part of our dropshadow */
+				content:"";
+				height: 3px;
+				background: rgba(0,0,0,.3);
+				display: block;
+				position: absolute;
+				bottom: -3px;
+				left: 58px;
+				right:3px;
+			}
+			
+			#ribbon-container a {
+				display:block;
+				padding:20px;
+				position:relative; /* allows us to position our pseudo-elements properly */
+				background:#0089d0;
+				overflow:visible;
+				height:58px;
+				margin-left:29px;
+				color:#fff;
+				text-decoration:none;
+			}
+			
+			#ribbon-container a:after { /* this creates the "folded" part of our ribbon */
+				content:""; 
+				height: 0;
+				width: 0;
+				display:block;
+				position:absolute;
+				bottom:-15px;
+				right:0;
+				border-top: 15px solid #004a70; 
+				border-right: 15px solid transparent;
+			}
+			
+			#ribbon-container a:before { /* this creates the "forked" part of our ribbon */
+				content:"";
+				height: 0;
+				width: 0;
+				display:block;
+				position:absolute;
+				top:0;
+				left:-29px;
+				border-top: 29px solid #0089d0; 
+				border-bottom: 29px solid #0089d0; 
+				border-right: 29px solid transparent;
+				border-left: 29px solid transparent;
+			}
+			
+			#ribbon-container a:hover {
+				background:#009ff1;
+			}
+			
+			#ribbon-container a:hover:before { /* this makes sure that the "forked" part of the ribbon changes color with the anchor on :hover */
+				border-top: 29px solid #009ff1; 
+				border-bottom: 29px solid #009ff1;
+			}
+			
 font.whiteFont{
 color:white;
 font-weight:200px;
 font-size: 20px;
 }
 
+.ribbon {
+padding-top: 70px;
+background: #FCDE51;
+border-left: 1px dashed gray;
+border-right: 1px dashed gray;
+border-radius: 5px 5px 0 0;
+box-shadow: 5px 0 0 #FCDE51, -5px 0 0 #FCDE51;
+/* height: 120px; */
+/* margin-top: 200px; */
+/* width: 90px; */
+-webkit-filter: drop-shadow(0 2px 5px hsla(0,0%,0%,.5));
+display: inline;
+}
+.ribbon:after,
+.ribbon:before {
+   border-top: 20px solid #FCDE51;
+content: '';
+height: 0;
+position: absolute;
+top: 100%;
+width: 0;
+}
+
+.ribbon:after {
+    border-left: 50px solid transparent;
+    right: -6px;
+}
+.ribbon:before {
+    border-right: 50px solid transparent;
+    left: -6px;
+}
+
+#ribbon {
+	width: 180px;
+	height: 280px;
+	margin: 50px auto 0;
+	position: relative;
+	overflow: hidden;
+}
+
+#ribbon .inset {
+	width: 200px;
+	height: 55px;
+	position: absolute;
+	top: -50px;
+	left: -10px;
+	z-index: 5;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	
+	background: rgba(0,0,0,0.3);
+	
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+}
+
+#ribbon .container {
+	position: relative;
+	width: 100px;
+	height: 250px;
+	overflow: hidden;
+	margin: 0 auto;
+	border-left: 1px solid #631a15;
+	border-right: 1px solid #631a15;
+}
+
+#ribbon .base {
+	height: 200px;
+	width: 100px;
+	
+	background: rgb(199,59,60);
+	background: -moz-linear-gradient(top,  rgba(199,59,60,1) 0%, rgba(184,32,31,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(199,59,60,1)), color-stop(100%,rgba(184,32,31,1)));
+	background: -webkit-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+	background: -o-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+	background: linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c73b3c', endColorstr='#b8201f',GradientType=0 );
+
+	position: relative;
+	z-index: 2;
+}
+
+#ribbon .base:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 86px;
+	left: 6px;
+	height: 242px;
+	border-left: 1px dashed #631a15;
+	border-right: 1px dashed #631a15;
+}
+
+#ribbon .base:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 86px;
+	left: 7px;
+	height: 242px;
+	border-left: 1px dashed #da5050;
+	border-right: 1px dashed #da5050;
+}
+
+#ribbon .left_corner {
+	width: 100px;
+	height: 100px;
+	background: #b8201f;
+	position: absolute;
+	bottom: 20px;
+	left: -50px;
+	z-index: 1;
+	
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+#ribbon .right_corner {
+	width: 100px;
+	height: 100px;
+	background: #b8201f;
+	position: absolute;
+	bottom: 20px;
+	right: -50px;
+	z-index: 1;
+	
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
 
 article#getInvolved{
 background:white;
@@ -514,6 +819,11 @@ text-align:center;
 
 }
 
+font.donateFont {
+
+color:black;
+
+}
 p.os10{
 
 color: black;
