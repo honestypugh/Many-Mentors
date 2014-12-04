@@ -909,11 +909,11 @@ margin-left: 20px;
 }
 
 
-div#leftRightMargin
+
+
+div#leftMargin
 {
 margin-left: 10%;
-margin-right: 10%;
-
 }
 div.icons{	
 	text-align:left;
