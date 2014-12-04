@@ -15,6 +15,7 @@ Table of Contents
 /* End Blue circle for each step */
 
 
+
 font.largeNumber {
 font-family: Impact, Charcoal, sans-serif;
 font-size: 70px;
@@ -28,8 +29,8 @@ color: white;
 }
 
 font.boldOS {
-font-size: 25px;
-font-weight: 500;
+font-size: 22px;
+font-weight: 900;
 }
 
 .ribbon {
@@ -537,17 +538,11 @@ div#textMenus {
 
     width: 100%;
     z-index:0; 
-    background: #eeeeee;
     -webkit-transform: translateZ( 0 );
     transform: translateZ( 0 );
     -webkit-transition: -webkit-transform 2s ease-in-out;
     transition: transform 2s ease-in-out;
     
-}
-
-.aboutArticle 
-{
-	background: white;
 }
 
 
@@ -820,9 +815,9 @@ text-align:center;
 }
 
 font.donateFont {
-
-color:black;
-
+font-family: Impact, Charcoal, sans-serif;
+color: black;
+margin: 5px;
 }
 p.os10{
 
@@ -837,6 +832,16 @@ padding-right: 0px;
 margin-left: 20px;
 
 }
+
+
+p.os18 {
+color: gray;
+font-family: 'Open Sans', sans-serif;
+font-weight: 400;
+font-size: xx-large;
+margin: 20px;
+}
+
 
 p.os14{
 

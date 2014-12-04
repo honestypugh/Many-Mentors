@@ -6,8 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge
-<meta name="viewport" content="width=device-width, initial-scale=1">
- 
+<meta name="
+	viewport" content="width=device-width, initial-scale=1">
+
 <!-- jQuery library (served from Google) -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <link
@@ -41,150 +42,183 @@
 <link rel="stylesheet" type="text/css" href="css/nav.css">
 <!-- css for new navigation bar-->
 
-<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link
+	href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700'
+	rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/style.css" />
- 
- 
+
+
 
 <!-- End Bootstrap -->
 </head>
 <body>
 
-<div id="fb-root"></div>
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script
-			src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
-
-		<script src="assets/bootstrap.min.js"></script>
-<script src="js/classie.js"></script>
-<script>
-    function init() {
-        window.addEventListener('scroll', function(e){
-            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                shrinkOn = 300,
-                header = document.querySelector("header");
-            if (distanceY > shrinkOn) {
-                classie.add(header,"smaller");
-            } else {
-                if (classie.has(header,"smaller")) {
-                    classie.remove(header,"smaller");
-                }
-            }
-        });
-    }
-    window.onload = init();
-
-		$('#myCarousel').on('slide.bs.carousel', function (e) {
-  if (e.type == "slide" && e.direction == "right" && e.relatedTarget.className != "item"){
-    return e.preventDefault();
-  }
-})
-			$(document).ready(function() {
-				$("input#submit").click(function() {
-					$.ajax({
-						type : "POST",
-						url : "process.php", // 
-						data : $('form.contact').serialize(),
-						success : function(msg) {
-							$("#thanks").html(msg)
-							$("#form-content").modal('hide');
-						},
-						error : function() {
-							alert("failure");
-						}
-					});
-				});
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId : 'your-app-id',
+				xfbml : true,
+				version : 'v2.1'
 			});
-		
+		};
 
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 
-		
-			$(function() {
-				var curPage = "";
-				$("#menu a").click(function(event) {
-					event.preventDefault();
-					if (curPage.length) {
-						$("#" + curPage).hide();
-					}
-					curPage = $(this).data("page");
-					$("#" + curPage).show();
-				});
-			});
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
-			$(function() {
-				$('a[href*=#]:not([href=#])')
-						.click(
-								function() {
-									if (location.pathname.replace(/^\//, '') == this.pathname
-											.replace(/^\//, '')
-											&& location.hostname == this.hostname) {
-										var target = $(this.hash);
-										target = target.length ? target
-												: $('[name='
-														+ this.hash.slice(1)
-														+ ']');
-										if (target.length) {
-											$('html,body').animate({
-												scrollTop : target.offset().top
-											}, 1000);
-											return false;
-										}
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<script src="assets/bootstrap.min.js"></script>
+	<script src="js/classie.js"></script>
+	<script>
+		function init() {
+			window
+					.addEventListener(
+							'scroll',
+							function(e) {
+								var distanceY = window.pageYOffset
+										|| document.documentElement.scrollTop, shrinkOn = 300, header = document
+										.querySelector("header");
+								if (distanceY > shrinkOn) {
+									classie.add(header, "smaller");
+								} else {
+									if (classie.has(header, "smaller")) {
+										classie.remove(header, "smaller");
 									}
-								});
+								}
+							});
+		}
+		window.onload = init();
+
+		$('#myCarousel').on(
+				'slide.bs.carousel',
+				function(e) {
+					if (e.type == "slide" && e.direction == "right"
+							&& e.relatedTarget.className != "item") {
+						return e.preventDefault();
+					}
+				})
+		$(document).ready(function() {
+			$("input#submit").click(function() {
+				$.ajax({
+					type : "POST",
+					url : "process.php", // 
+					data : $('form.contact').serialize(),
+					success : function(msg) {
+						$("#thanks").html(msg)
+						$("#form-content").modal('hide');
+					},
+					error : function() {
+						alert("failure");
+					}
+				});
 			});
+		});
+
+		$(function() {
+			var curPage = "";
+			$("#menu a").click(function(event) {
+				event.preventDefault();
+				if (curPage.length) {
+					$("#" + curPage).hide();
+				}
+				curPage = $(this).data("page");
+				$("#" + curPage).show();
+			});
+		});
+
+		$(function() {
+			$('a[href*=#]:not([href=#])')
+					.click(
+							function() {
+								if (location.pathname.replace(/^\//, '') == this.pathname
+										.replace(/^\//, '')
+										&& location.hostname == this.hostname) {
+									var target = $(this.hash);
+									target = target.length ? target
+											: $('[name=' + this.hash.slice(1)
+													+ ']');
+									if (target.length) {
+										$('html,body').animate({
+											scrollTop : target.offset().top
+										}, 1000);
+										return false;
+									}
+								}
+							});
+		});
+	</script>
+
+	<!--End Java Script-->
+
+	<article class="article" id="top"></article>
+
+	<header>
+		<div class="container clearfix">
+			<h1 id="logo">
+				<img src="img/logo.png" height="90%">
+			</h1>
+
+			<nav>
+
+				<a href="#about">About</a>
+				<a href="#ourImpact">Our Impact</a>
+				<a
+					href="#getInvolved">Get Involved</a>
+				<a href="">Connect</a>
+				<a href="https://www.paypal.com/cgi-bin/webscr">
+					<div class="ribbon">
+						<font class="donateFont">DONATE</font>
+					</div>
+				</a>
+				<button type="button" class="btn btn-danger">
+					Apply Now </a>
+		</div>
 
 
-		
-		
-		
-		</script>
 
-<!--End Java Script-->
 
-<article class="article" id="top"></article>
-
-<header>
-    <div class="container clearfix">
-        <h1 id="logo" >
-        <img src="img/logo.png" height="90%">
-        </h1>
-       
-        <nav>
-        
-        <a href="#about">About</a>
-        <a href="#ourImpact">Our Impact</a>
-        <a href="#getInvolved">Get Involved</a>
-        <a href="">Connect</a>
-        <a href="https://www.paypal.com/cgi-bin/webscr">
-		<div class="ribbon"><font class="donateFont">DONATE</font></div>
-		</a>
-		<button type="button" class="btn btn-danger">
-		Apply Now
-						 </a>
-					
-</div>
-	
-	
-
-		
 		<div class="hello">hello</div>
-		
-        </nav>
-        
-    </div>
-</header><!-- /header -->
+
+		</nav>
+
+		</div>
+	</header>
+	<!-- /header -->
 
 
-<article class="article" height="1000px">
-sibal..
-</article>
+	<article class="article" height="1000px">sibal..</article>
 
-	
-		
+
+
 
 	<!-- Photo gallery-->
 	<div id="icons"
@@ -192,79 +226,79 @@ sibal..
 		<img src="./index_files/logo.png" width="120" height="80" hspace="100"
 			align="left">
 	</div>
-	
-<article class="article" id="home">
-<div id="mmwCarousel" class="carousel slide" data-ride="carousel">
+
+	<article class="article" id="home">
+		<div id="mmwCarousel" class="carousel slide" data-ride="carousel">
 
 
-  <!-- Wrapper for slides -->
+			<!-- Wrapper for slides -->
 
 
-  <div class="carousel-inner">
-  
-  
-	<div class="item active">
-      <img src="photoGallery/pic1.jpg" height="100%" width="100%">
-     
-      <!--Caption-->
-      <div class="carousel-caption">
-		<button type="button" class="btn btn-primary" data-target="#mmwCarousel" data-slide-to="1">		
-		<font size="4px">Learn More</font>
-		</button>							 
-      </div>
-      <!-- End Caption-->
+			<div class="carousel-inner">
 
-    </div>
-    
-    <div class="item">
- 		<img src="photoGallery/pic2.jpg" height="100%" width="100%">
-           <div class="carousel-caption">
-      	  <p>Slide 2</p>      
-           </div>
-     
-    </div>
-    <div class="item">
-       <img src="photoGallery/pic3.jpg" height="100%" width="100%">
-     
-      <div class="carousel-caption">
-      
-      <p>Slide 3</p>
-      
-      </div>	  
-	   </div>
-    <div class="item">
-       <img src="photoGallery/pic4.jpg" height="100%" width="100%">  
-      <div class="carousel-caption">
-      
-      <p>Slide 4</p>
-      
-      </div>	  
-	   </div>
-	   
-  </div>
-	     <!-- Indicators (small circles)-->
-  <ol class="carousel-indicators">
-    <li data-target="#mmwCarousel" data-slide-to="0" ></li>
-    <li data-target="#mmwCarousel" data-slide-to="1"></li>
-    <li data-target="#mmwCarousel" data-slide-to="2"></li>
-    <li data-target="#mmwCarousel" data-slide-to="3"></li>
 
-  </ol> 
-</div>
+				<div class="item active">
+					<img src="photoGallery/pic1.jpg" height="100%" width="100%">
 
-			<!--White Box -->
-			
-			<div class="whiteBox">
-		
-				<hr class="grayLine">
-				<p class="os14" align="center">
-				Through the power of peer
-					mentoring, ManyMentors will inspire, encourage and support minority
-					and female students to gain interest in, pursue, and attain degrees
-					in Science, Technology, Engineering and Math (STEM)!</p>
-				<hr class="grayLine">
-				
+					<!--Caption-->
+					<div class="carousel-caption">
+						<button type="button" class="btn btn-primary"
+							data-target="#mmwCarousel" data-slide-to="1">
+							<font size="4px">Learn More</font>
+						</button>
+					</div>
+					<!-- End Caption-->
+
+				</div>
+
+				<div class="item">
+					<img src="photoGallery/pic2.jpg" height="100%" width="100%">
+					<div class="carousel-caption">
+						<p>Slide 2</p>
+					</div>
+
+				</div>
+				<div class="item">
+					<img src="photoGallery/pic3.jpg" height="100%" width="100%">
+
+					<div class="carousel-caption">
+
+						<p>Slide 3</p>
+
+					</div>
+				</div>
+				<div class="item">
+					<img src="photoGallery/pic4.jpg" height="100%" width="100%">
+					<div class="carousel-caption">
+
+						<p>Slide 4</p>
+
+					</div>
+				</div>
+
 			</div>
+			<!-- Indicators (small circles)-->
+			<ol class="carousel-indicators">
+				<li data-target="#mmwCarousel" data-slide-to="0"></li>
+				<li data-target="#mmwCarousel" data-slide-to="1"></li>
+				<li data-target="#mmwCarousel" data-slide-to="2"></li>
+				<li data-target="#mmwCarousel" data-slide-to="3"></li>
+
+			</ol>
+		</div>
+
+		<!--White Box -->
+
+		<div class="whiteBox">
+
+			<hr class="grayLine">
+			<p class="os14" align="center">Through the power of peer
+				mentoring, ManyMentors will inspire, encourage and support minority
+				and female students to gain interest in, pursue, and attain degrees
+				in Science, Technology, Engineering and Math (STEM)!</p>
+			<hr class="grayLine">
+
+		</div>
 	</article>
 
 
@@ -273,45 +307,34 @@ sibal..
 
 		<div id="leftRightMargin">
 
-			<p class="titleFont" align="center"><font class="line">----------</font> About <font class="line">----------</font></p>
+			<p class="titleFont" align="center">
+				<font class="line">----------</font> About <font class="line">----------</font>
+			</p>
 
 
 
 			<div class="row text-center">
 				<div class="col-md-4">
-				<br>
-				<img src="images/ourTeam_icon.gif" width="200px" height="200px">
-				<br>	
-				<br>				
-					<button type="button" class="btn btn-primary">
-						<font size="4px">
-						
-					
-						 Our Team</font>
-					</button>
+					<br> <img src="images/ourTeam_icon.gif" width="200px"
+						height="200px"> <br> <br>
+				
+				<font class="boldOS">Our Team</font><br>
 				</div>
 
 				<div class="col-md-4">
-					<br>	
-					<img src="images/ourPartners_icon.gif"  width="200px" height="200px">
-					<br>
-					<br>
-			
-					<button type="button" class="btn btn-primary">
-						<font size="4px"> Our Partners</font>
-					</button>
+					<br> <img src="images/ourPartners_icon.gif" width="200px"
+						height="200px"> <br> <br>
+
+
+<font class="boldOS">Our Partners</font><br>
+
 				</div>
 
 				<div class="col-md-4">
-					<br>
-					<img src="images/ourPartners_icon.gif"  width="200px" height="200px">
-					<br>
-					<br>
-					
-					<button type="button" class="btn btn-primary">
-						<font size="4px"> 
-						Our Supporters</font>
-					</button>
+					<br> <img src="images/ourPartners_icon.gif" width="200px"
+						height="200px"> <br> <br>
+					<font class="boldOS">Our Supporters</font><br>
+
 				</div>
 			</div>
 
@@ -322,11 +345,15 @@ sibal..
 				<div class="col-md-12">
 
 					<p class="os14">
-						<br> <br> <font class="blueBold"> ManyMentors</font>
-											is a 501(c)(3) nonprofit founded in 2011 to inspire, encourage, & support
-underrepresented students’ interest in pursuing science, technology, engineering, & math (STEM) fields, & eventual entrance into the STEM workforce. From middle schoolers to young working professionals, we connect individuals to near-age mentors who can make opportunities in STEM become more visible, valuable & viable.
+						<br> <br> <font class="blueBold"> ManyMentors</font> is
+						a 501(c)(3) nonprofit founded in 2011 to inspire, encourage, &
+						support underrepresented students’ interest in pursuing science,
+						technology, engineering, & math (STEM) fields, & eventual entrance
+						into the STEM workforce. From middle schoolers to young working
+						professionals, we connect individuals to near-age mentors who can
+						make opportunities in STEM become more visible, valuable & viable.
 
-						
+
 						<br> <br>
 					</p>
 
@@ -335,71 +362,74 @@ underrepresented students’ interest in pursuing science, technology, engineeri
 
 			<div class="row text-center">
 				<div class="col-md-12">
-				<img src="images/whyStem_icon.gif" width="200px" height="200px">
-				<br>	
-				<br>				
+					<img src="images/whyStem_icon.gif" width="200px" height="200px">
+					<br> <br>
 
 
 
-					<button type="button" class="btn btn-primary">
-						<font size="4px"> Why STEM? </font>
-					</button>
-				</div>
+					<font class="boldOS">Why STEM?</font><br>
+
+					</div>
 			</div>
 
 			<div class="row">
 
 				<div class="col-md-12">
-	<p class="titleFont" align="center"><font class="line">----------</font> Our Approach <font class="line">----------</font></p>
+					<p class="titleFont" align="center">
+						<font class="line">----------</font> Our Approach <font
+							class="line">----------</font>
+					</p>
 
 
 					<p class="os14">
-					
-					
-					
-We use a combination of <font color="#3c76ff">in-person</font> &
-<font color="#3c76ff">online</font> mentoring to coordinate STEM volunteer outreach & facilitate one-on-one mentor/mentee matching & communication. Students gain access to resources, discover local opportunities, & develop professional skills in the STEM fields.
-</p>
+
+
+
+						We use a combination of <font color="#3c76ff">in-person</font> & <font
+							color="#3c76ff">online</font> mentoring to coordinate STEM
+						volunteer outreach & facilitate one-on-one mentor/mentee matching
+						& communication. Students gain access to resources, discover local
+						opportunities, & develop professional skills in the STEM fields.
+					</p>
 
 
 
 				</div>
 			</div>
+
+
+			<p class="text-center">
+				<font class="boldOS">MENTORING</font><br>
+			</p>
 			
-			    <font class="boldOS">Mentoring</font><br>
 
-			<div class="row">
-    	<div class="col-xs-6 col-md-6">
-    	
-    	   <p align="center">
- 
-    <img src="index_files/onsite_tutoring_icon.png" height="30%" width="30%" class="align-center img-responsive"> 
- </p>
-    <br>
-    <p align="center">
-    <font class="boldOS">
-    in-person
-    </font>
-	</p>
-    </li>		
-    	</div>
-    	<div class="col-xs-6 col-md-6">
-    	   <p align="center">
- 
-    		<img src="index_files/online_tutoring_icon.png" height="30%" width="30%" class="align-center img-responsive"> </li>
-		</p>
-			<br>
-			    <p align="center">
-			  
-    <font class="boldOS">
-			    online</font></p>
-		</div>
-	</div>
-	
-	
+			<div class="row text-center">
+				<div class="col-md-4">
+					<br> 	<img src="index_files/onsite_tutoring_icon.png" height="200px"
+							width="200px">			
+					
+					<br>
+					<br>			
+				<font class="boldOS">in-person</font><br>
+				</div>
 
-				
-		<a href="#top"><font color="black"><p align="right">to
+				<div class="col-md-4">
+					
+
+
+<font class="boldOS">+</font><br>
+
+				</div>
+
+				<div class="col-md-4">
+					<img src="index_files/online_tutoring_icon.png" height="200px"
+							width="200px">
+					<br>
+				<font class="boldOS">online</font><br>
+
+				</div>
+			</div>
+			<a href="#top"><font color="black"><p align="right">to
 						the top</p></font></a>
 		</div>
 
@@ -407,149 +437,159 @@ We use a combination of <font color="#3c76ff">in-person</font> &
 	</article>
 
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
- max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed
-  { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
-  <iframe src='http://www.youtube.com/embed/SRxRsceuy00' frameborder='0' allowfullscreen></iframe></div>
+	<style>
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+}
 
-<br>
-<p class="text-center">
-<a href="" button type="button" class="btn btn-danger">FAQs</a>
-</p>
-<br>
+.embed-container iframe, .embed-container object, .embed-container embed
+	{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+	<div class='embed-container'>
+		<iframe src='http://www.youtube.com/embed/SRxRsceuy00' frameborder='0'
+			allowfullscreen></iframe>
+	</div>
+
+	<br>
+	<p class="text-center">
+		<a href="" button type="button" class="btn btn-danger">FAQs</a>
+	</p>
+	<br>
 
 	<article class="article" id="tutor">
-	<div class="imageAndText">
-    <img src="index_files/tutoring.png" height="100%" width="100%" class="align-center img-responsive">	
+		<div class="imageAndText">
+			<img src="index_files/tutoring.png" height="100%" width="100%"
+				class="align-center img-responsive">
 			<div class="row">
-			<p class="text-center largeFont">
-			<br>
-			ManyMentors serves students through our<br>
-			student and professional chapters.
-			<br>
-			<font class="blueBold">
-			
-			 Find one near you!
-			 </font>
-			<br>
-			</p>
-			
-	</div>
-	
-	
+				<p class="text-center largeFont">
+					<br> ManyMentors serves students through our<br> student
+					and professional chapters. <br> <font class="blueBold">
+
+						Find one near you! </font> <br>
+				</p>
+
+			</div>
 
 
-	</div>
+
+
+		</div>
 	</article>
-			
-	
+
+
 	<!--Our Impact-->
 
 	<article class="aboutArticle" id="ourImpact">
 		<div id="leftRightMargin">
 			<p class="titleFont" align="center">
-			<font class="line">----------</font> Our Impact <font class="line">----------</font></p>
-		
-		
-<!--Our Impact: Contents-->
-<div class="row text-center">
-	<div class="col-md-4">
-		<img src="images/support_icon.gif" width="150px" height="150px">
-		<p class="os14">
-		<font class="largeNumber">64</font><br>
-		<b>Supported</b> STEM<br>
-		organizations & events<br>
-		with volunteers, mentors,<br>
-		and speakers
-	</p>
-	</div>
-	
-	<div class="col-md-4">
-		<img src="images/connect_icon.gif" width="150px" height="150px">
-		<p class="os14">
-				<font class="largeNumber">253</font><br>
-						
-						<b>Connected</b> mentors<br>
-						through in-person<br>
-						and & online<br>
-						mentoring
-		</p>
-	</div>
+				<font class="line">----------</font> Our Impact <font class="line">----------</font>
+			</p>
+			<!--Our Impact: Contents-->
+			<div class="row text-center">
+				<div class="col-md-4">
+					<img src="images/support_icon.gif" width="150px" height="150px">
+					<p class="os14">
+						<font class="largeNumber">64</font><br> <b>Supported</b> STEM<br>
+						organizations & events<br> with volunteers, mentors,<br>
+						and speakers
+					</p>
+				</div>
 
-	<div class="col-md-4">
-		<img src="images/inspire_icon.gif"  width="150px" height="150px">
-			<p class="os14">
-					<font class="largeNumber">5,252</font><br>	
-					<b>Inspired</b> middle and<br>
-					high school students<br>
-					to consider STEM<br>
-					degrees & careers
+				<div class="col-md-4">
+					<img src="images/connect_icon.gif" width="150px" height="150px">
+					<p class="os14">
+						<font class="largeNumber">253</font><br> <b>Connected</b>
+						mentors<br> through in-person<br> and & online<br>
+						mentoring
+					</p>
+				</div>
+
+				<div class="col-md-4">
+					<img src="images/inspire_icon.gif" width="150px" height="150px">
+					<p class="os14">
+						<font class="largeNumber">5,252</font><br> <b>Inspired</b>
+						middle and<br> high school students<br> to consider STEM<br>
+						degrees & careers
 					</p>
 
 				</div>
 			</div>
 			<!--End Our Impact: Contents-->
 
-		
-			
+
+
 		</div>
 		<a href="#top"><font color="black"><p align="right">to
-						the top</p></font></a>
-						
+					the top</p></font></a>
+
 		<!--White Box -->
 		<div class="whiteBox">
-		<hr class="grayLine">
+			<hr class="grayLine">
 
 			<p class="os14" align="center">"ManyMentors helps me be a role
 				model to the youth in my community"</p>
 			<br>
 			<p class="os10" align="center">-Julian Rose, Biomedical
 				Engineering, UConn</p>
-				
-		<hr class="grayLine">
+
+			<hr class="grayLine">
 		</div>
 		<!-- End White Box -->
-	
-		
+
+
 	</article>
 	<!--end of the page-->
 
 
-	<article class="whiteArticle" id="getInvolved">	
+	<article class="whiteArticle" id="getInvolved">
 		<img src="index_files/getInvolved.png" width="100%">
 
-	<p class="titleFont" align="center"><font class="line">----------</font> Get Involved <font class="line">----------</font></p>
+		<p class="titleFont" align="center">
+			<font class="line">----------</font> Get Involved <font class="line">----------</font>
+		</p>
 
-	<div class="whiteBackground">
-	<img src="img/steps.png"class="img-responsive center-block" /><br><br>
-  		
-	</div>
+		<div class="whiteBackground">
+			<img src="img/steps.png" class="img-responsive center-block" /><br>
+			<br>
+
+		</div>
 
 
 
-<!--red color Navigation-->
+		<!--red color Navigation-->
 
-<div class="navbar navbar-default" role="navigation">
-				<div class="navbar-header-default">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#middleMenuBar">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="navbar-collapse collapse" id="whatsup">
-					<ul class="nav navbar-nav" id="menu">
-						<li><a href="#" data-page="page1">On My Campus</a></li>
-						<li><a href="#" data-page="page2">I represent an
-								organization</a></li>
-						<li><a href="#" data-page="page3">I am a parent</a></li>
-						<li><a href="#" data-page="page4">I want to mentor</a></li>
-						<li><a href="#" data-page="page5">I want to be mentored</a></li>
-					</ul>
-				</div>
-				<!--/.nav-collapse -->
-</div>
+		<div class="navbar navbar-default" role="navigation">
+			<div class="navbar-header-default">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#middleMenuBar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse" id="whatsup">
+				<ul class="nav navbar-nav" id="menu">
+					<li><a href="#" data-page="page1">On My Campus</a></li>
+					<li><a href="#" data-page="page2">I represent an
+							organization</a></li>
+					<li><a href="#" data-page="page3">I am a parent</a></li>
+					<li><a href="#" data-page="page4">I want to mentor</a></li>
+					<li><a href="#" data-page="page5">I want to be mentored</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
 
 
 		<div id="page1" class="content">
@@ -583,24 +623,25 @@ We use a combination of <font color="#3c76ff">in-person</font> &
 		</div>
 
 		<div id="page4" class="content">
-			
-				
-			What We Are Seeking
-			<ul>
-				<li>University students & young working professionals studying or with an academic background in the science, technology, engineering or math (STEM) fields.</li>
-				<li>Committed individuals who want to use their knowledge, experience & insights to provide guidance to their mentees to aid in the upward progression of individuals in STEM fields.</li>
-				<li>Diverse, enthusiastic, positive-minded people seeking to make a real difference in the life of a underrepresented middle or high school student.</li>
-				</ul>
-<!--gray part-->
-￼What You Should Expect
-● Quick and easy online application, training, and matching process.
-● A seamless online STEM mentoring experience that takes no more than 15 minutes a week.
-● Support from ManyMentors staff to encourage relevant discussion & provide materials about opportunities and interesting topics that can help guide your mentee towards reaching his or her goals.
-● Opportunities to get involved in volunteerism your location area.
+			<p class="os18">What We Are Seeking</p>
+			University students & young working professionals studying or with an
+			academic background in the science, technology, engineering or math
+			(STEM) fields. <br> Committed individuals who want to use their
+			knowledge, experience & insights to provide guidance to their mentees
+			to aid in the upward progression of individuals in STEM fields. <br>
+			Diverse, enthusiastic, positive-minded people seeking to make a real
+			difference in the life of a underrepresented middle or high school
+			student.
 
-con1  p 
-con2  i
-      c
+			<p class="os18">What You Should Expect</p>
+			</p>
+			● Quick and easy online application, training, and matching process.
+			● A seamless online STEM mentoring experience that takes no more than
+			15 minutes a week. ● Support from ManyMentors staff to encourage
+			relevant discussion & provide materials about opportunities and
+			interesting topics that can help guide your mentee towards reaching
+			his or her goals. ● Opportunities to get involved in volunteerism
+			your location area. con1 p con2 i c
 
 		</div>
 
@@ -615,14 +656,15 @@ con2  i
 		</div>
 
 
-<p class="text-center">
-<a href="" button type="button" class="btn btn-danger">Apply Now!</a>
-</p>
+		<p class="text-center">
+			<a href="" button type="button" class="btn btn-danger">Apply Now!</a>
+		</p>
 
 
 
-				<a href="#top"><font color="black"><p align="right">to
-						the top</p></font></a>
+
+		<a href="#top"><font color="black"><p align="right">to
+					the top</p></font></a>
 
 	</article>
 
@@ -631,23 +673,53 @@ con2  i
 
 	<article class="article" id="news">
 		<img src="index_files/newsBanner.png" width="100%">
-	
+		<p class="titleFont" align="center">
+			<font class="line">----------</font> Connect <font class="line">----------</font>
+		</p>
+		<p class="text-center">“Like” us on Facebook and Follow us on
+			Twitter!</p>
 
-			<p class="titleFont" align="center"><font class="line">----------</font> Connect <font class="line">----------</font></p>
-			<p class="text-center">
-			“Like” us on Facebook and Follow us on Twitter!
-			</p>
+		<!--Like box & Twitter news feeds -->
+		<div class="row">
+			<div class="col-xs-6 col-md-6">
 
-<div class="fb-like-box" data-href="https://www.facebook.com/manymentors" data-width="300" data-height="600" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+				<p class="text-center">
+				<div class="fb-like-box"
+					data-href="https://www.facebook.com/manymentors" data-width="100%"
+					data-colorscheme="light" data-show-faces="true" data-header="true"
+					data-stream="false" data-show-border="true"></div>
+				</p>
+			</div>
+			<div class="col-xs-6 col-md-6">
+				<p align="center">
 
-<br>
-<a class="twitter-timeline" href="https://twitter.com/ManyMentors_org" data-widget-id="410401076479680513">Tweets by @ManyMentors_org</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					<a class="twitter-timeline"
+						href="https://twitter.com/ManyMentors_org"
+						data-widget-id="410401076479680513">Tweets by @ManyMentors_org</a>
+					<script>
+						!function(d, s, id) {
+							var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
+									.test(d.location) ? 'http' : 'https';
+							if (!d.getElementById(id)) {
+								js = d.createElement(s);
+								js.id = id;
+								js.src = p
+										+ "://platform.twitter.com/widgets.js";
+								fjs.parentNode.insertBefore(js, fjs);
+							}
+						}(document, "script", "twitter-wjs");
+					</script>
 
-		<a class="twitter-timeline" href="https://twitter.com/ManyMentors_org">
-		</a> 
-					<a href="#top"><font color="black"><p align="right">to
-						the top</p></font></a>
+					<a class="twitter-timeline"
+						href="https://twitter.com/ManyMentors_org"> </a>
+				</p>
+			</div>
+		</div>
+
+
+
+		<br> <a href="#top"><font color="black"><p
+					align="right">to the top</p></font></a>
 
 
 
@@ -666,15 +738,13 @@ con2  i
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"> 
-					<font color="white">
-							Copyright© ManyMentors 2014
-					</font>
+					<a class="navbar-brand" href="#"> <font color="white">
+							Copyright© ManyMentors 2014 </font>
 					</a>
 				</div>
 				<div class="navbar-collapse collapse" id="footerMenu">
 
-				<ul class="nav navbar-nav">
+					<ul class="nav navbar-nav">
 
 						<li>
 							<!-- Button trigger modal -->
@@ -855,171 +925,184 @@ con2  i
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default"
 												data-dismiss="modal">Close</button>
-									<li>
+											<li>
 
 
-							<button class="btn btn-link" data-toggle="modal"
-								data-target="#contactUs">
-								<font class="whiteBold"> <font size="3px"> Questions? </font>
-								</font>
-							</button> <!-- Modal -->
-							<div class="modal fade" id="contactUs" tabindex="-1"
-								role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal">
-												<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-											</button>
-											<h4 class="modal-title" id="myModalLabel">Many Mentors -
-												Terms and Services</h4>
-										</div>
-										<div class="modal-body">
+												<button class="btn btn-link" data-toggle="modal"
+													data-target="#contactUs">
+													<font class="whiteBold"> <font size="3px">
+															Questions? </font>
+													</font>
+												</button> <!-- Modal -->
+												<div class="modal fade" id="contactUs" tabindex="-1"
+													role="dialog" aria-labelledby="myModalLabel"
+													aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal">
+																	<span aria-hidden="true">&times;</span><span
+																		class="sr-only">Close</span>
+																</button>
+																<h4 class="modal-title" id="myModalLabel">Many
+																	Mentors - Terms and Services</h4>
+															</div>
+															<div class="modal-body">
 
-											<div class="row">
-												<div class="col-md-6">
+																<div class="row">
+																	<div class="col-md-6">
 
-													<address>
-														<strong>Many Mentors</strong><br> 1077 Silas Deane
-														Highway, PMB 200<br> Wethersfield, CT 06109<br>
-														<!--
+																		<address>
+																			<strong>Many Mentors</strong><br> 1077 Silas
+																			Deane Highway, PMB 200<br> Wethersfield, CT
+																			06109<br>
+																			<!--
   <abbr title="Phone">P:</abbr> (123) 456-7890-->
-													</address>
-												</div>
-												<div class="col-md-6">
+																		</address>
+																	</div>
+																	<div class="col-md-6">
 
-													<div id="contact-area">
+																		<div id="contact-area">
 
-														<form method="post" action="contactengine.php">
-															<label for="Name">Name:</label> <input type="text"
-																name="Name" id="Name"> <label for="City">City:</label>
-															<input type="text" name="City" id="City"> <label
-																for="Email">Email:</label> <input type="text"
-																name="Email" id="Email"> <label for="Message">Message:</label><br>
-															<textarea name="Message" rows="20" cols="20" id="Message"></textarea>
+																			<form method="post" action="contactengine.php">
+																				<label for="Name">Name:</label> <input type="text"
+																					name="Name" id="Name"> <label for="City">City:</label>
+																				<input type="text" name="City" id="City"> <label
+																					for="Email">Email:</label> <input type="text"
+																					name="Email" id="Email"> <label
+																					for="Message">Message:</label><br>
+																				<textarea name="Message" rows="20" cols="20"
+																					id="Message"></textarea>
 
-															<input type="submit" name="submit" value="Submit"
-																class="submit-button">
-														</form>
+																				<input type="submit" name="submit" value="Submit"
+																					class="submit-button">
+																			</form>
 
-														<div style="clear: both;"></div>
+																			<div style="clear: both;"></div>
 
-														<p>
-															Check out a <a
-																href="http://css-tricks.com/examples/NiceSimpleContactForm2">version
-																of this</a> with SPAM protection.
-														</p>
+																			<p>
+																				Check out a <a
+																					href="http://css-tricks.com/examples/NiceSimpleContactForm2">version
+																					of this</a> with SPAM protection.
+																			</p>
 
-													</div>
+																		</div>
 
 
-												</div>
-											</div>
+																	</div>
+																</div>
 
-										</div>
+															</div>
 
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default"
-												data-dismiss="modal">Close</button>
-											<!--
+															<div class="modal-footer">
+																<button type="button" class="btn btn-default"
+																	data-dismiss="modal">Close</button>
+																<!--
         <button type="button" class="btn btn-primary">Save changes</button>-->
-										</div>
-									</div>
-								</div>
-							</div>
+															</div>
+														</div>
+													</div>
+												</div>
 
-						</li> <!--Questions ?-->
-						<li>
+											</li>
+											<!--Questions ?-->
+											<li>
 
-							<button class="btn btn-link" data-toggle="modal"
-								data-target="#contactUs">
-								<font class="blueBold"> <font size="3px"> Contact
-										Us </font>
-								</font>
-							</button> <!-- Modal -->
-							<div class="modal fade" id="contactUs" tabindex="-1"
-								role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal">
-												<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-											</button>
-											<h4 class="modal-title" id="myModalLabel">Many Mentors -
-												Terms and Services</h4>
-										</div>
-										<div class="modal-body">
+												<button class="btn btn-link" data-toggle="modal"
+													data-target="#contactUs">
+													<font class="blueBold"> <font size="3px">
+															Contact Us </font>
+													</font>
+												</button> <!-- Modal -->
+												<div class="modal fade" id="contactUs" tabindex="-1"
+													role="dialog" aria-labelledby="myModalLabel"
+													aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal">
+																	<span aria-hidden="true">&times;</span><span
+																		class="sr-only">Close</span>
+																</button>
+																<h4 class="modal-title" id="myModalLabel">Many
+																	Mentors - Terms and Services</h4>
+															</div>
+															<div class="modal-body">
 
-											<div class="row">
-												<div class="col-md-6">
+																<div class="row">
+																	<div class="col-md-6">
 
-													<address>
-														<strong>Many Mentors</strong><br> 1077 Silas Deane
-														Highway, PMB 200<br> Wethersfield, CT 06109<br>
-														<!--
+																		<address>
+																			<strong>Many Mentors</strong><br> 1077 Silas
+																			Deane Highway, PMB 200<br> Wethersfield, CT
+																			06109<br>
+																			<!--
   <abbr title="Phone">P:</abbr> (123) 456-7890-->
-													</address>
-												</div>
-												<div class="col-md-6">
+																		</address>
+																	</div>
+																	<div class="col-md-6">
 
-													<div id="contact-area">
+																		<div id="contact-area">
 
-														<form method="post" action="contactengine.php">
-															<label for="Name">Name:</label> <input type="text"
-																name="Name" id="Name"> <label for="City">City:</label>
-															<input type="text" name="City" id="City"> <label
-																for="Email">Email:</label> <input type="text"
-																name="Email" id="Email"> <label for="Message">Message:</label><br>
-															<textarea name="Message" rows="20" cols="20" id="Message"></textarea>
+																			<form method="post" action="contactengine.php">
+																				<label for="Name">Name:</label> <input type="text"
+																					name="Name" id="Name"> <label for="City">City:</label>
+																				<input type="text" name="City" id="City"> <label
+																					for="Email">Email:</label> <input type="text"
+																					name="Email" id="Email"> <label
+																					for="Message">Message:</label><br>
+																				<textarea name="Message" rows="20" cols="20"
+																					id="Message"></textarea>
 
-															<input type="submit" name="submit" value="Submit"
-																class="submit-button">
-														</form>
+																				<input type="submit" name="submit" value="Submit"
+																					class="submit-button">
+																			</form>
 
-														<div style="clear: both;"></div>
+																			<div style="clear: both;"></div>
 
-														<p>
-															Check out a <a
-																href="http://css-tricks.com/examples/NiceSimpleContactForm2">version
-																of this</a> with SPAM protection.
-														</p>
+																			<p>
+																				Check out a <a
+																					href="http://css-tricks.com/examples/NiceSimpleContactForm2">version
+																					of this</a> with SPAM protection.
+																			</p>
 
-													</div>
+																		</div>
 
 
-												</div>
-											</div>
+																	</div>
+																</div>
 
-										</div>
+															</div>
 
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default"
-												data-dismiss="modal">Close</button>
-											<!--
+															<div class="modal-footer">
+																<button type="button" class="btn btn-default"
+																	data-dismiss="modal">Close</button>
+																<!--
         <button type="button" class="btn btn-primary">Save changes</button>-->
-										</div>
-									</div>
-								</div>
-							</div>
+															</div>
+														</div>
+													</div>
+												</div>
 
-						</li> <!--Contact Us-->
-				</ul>
-				
-				<ul class="nav navbar-nav navbar-right">
-					<span class="icon"> 
-					<a
-						href="https://www.facebook.com/manymentors" target="_blank"> <img
-							src="./social_media_icons/facebook_icon.png" width="30"
-							height="30" class="iconMargin">
-					</a> <a href="http://instagram.com/manymentors" target="_blank"> <img
-							src="./social_media_icons/instagram_icon.png" width="30"
-							height="30" class="iconMargin">
-					</a> <a href="https://twitter.com/ManyMentors_org" target="_blank">
-							<img src="./social_media_icons/twitter_icon.png" width="30"
-							height="30" class="iconMargin">
-					</a>
-					</span>
-				</ul> <!-- SNS Icons -->
+											</li>
+											<!--Contact Us-->
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<span class="icon"> <a
+							href="https://www.facebook.com/manymentors" target="_blank">
+								<img src="./social_media_icons/facebook_icon.png" width="30"
+								height="30" class="iconMargin">
+						</a> <a href="http://instagram.com/manymentors" target="_blank"> <img
+								src="./social_media_icons/instagram_icon.png" width="30"
+								height="30" class="iconMargin">
+						</a> <a href="https://twitter.com/ManyMentors_org" target="_blank">
+								<img src="./social_media_icons/twitter_icon.png" width="30"
+								height="30" class="iconMargin">
+						</a>
+						</span>
+					</ul>
+					<!-- SNS Icons -->
 				</div>
 
 			</div>
