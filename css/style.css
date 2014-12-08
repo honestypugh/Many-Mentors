@@ -82,7 +82,7 @@ a:hover {
   padding-top: 150px; }
 
 .container {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding: 0 30px; }
 
@@ -158,7 +158,7 @@ header {
     float: right; }
     header nav a {
       line-height: 150px;
-      margin-left: 20px;
+    margin: 10px;
  	  color: #FFFFFF;
       font-weight: 700;
       font-size: 18px;
